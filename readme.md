@@ -1,2 +1,2 @@
-# takasumiAPI pythonラッパー＾
+# takasumiAPI pythonラッパー
 docstringはnumpyを使用
