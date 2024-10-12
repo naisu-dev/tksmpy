@@ -1,6 +1,7 @@
 # takasumiAPI pythonラッパー
 docstringはnumpyを使用
 上の方の関数はコード削減用です
+
 ### クラス
 - user ユーザー
   - .id ID
