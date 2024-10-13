@@ -1,3 +1,4 @@
 .venv
 __pycache__
 tksm/__pycache__
+main.py
