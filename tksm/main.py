@@ -9,7 +9,7 @@ def load(req: requests.models.Response) -> dict:
     ## requests.getをdict型に変換する関数
     return json.loads(req.content)["data"]
 
-def time(i: dict) -> datetime:
+def d_time(i: dict) -> datetime:
     ## i["time"]をdatetime型に変換する関数
     return datetime.strptime(i["time"], "%Y-%m-%d %H:%M:%S")
 
@@ -49,7 +49,7 @@ class user:
                 for j in  strange(9):
                     i.pop(j)
                 i = all_int(i, ["id", "amount", "roll", "yellow", "red", "blue", "random", "stock"])
-                i["time"] = time(i)
+                i["time"] = d_time(i)
                 return i
                 
 
@@ -83,7 +83,7 @@ class user:
                 for j in strange(3):
                     i.pop(j)
                 i["id"] = int(i["id"])
-                i["time"] = time(i)
+                i["time"] = d_time(i)
                 return i
         return None
     
@@ -102,7 +102,7 @@ class user:
             for j in strange(5):
                 i.pop(j)
             i = all_int(i, ["amount", "user"])
-            i["time"] = time(i)
+            i["time"] = d_time(i)
             out += [i]
         return out
 
@@ -147,7 +147,7 @@ class gift:
         for i in strange(4):
             data.pop(i)
         data = all_int(data, ["type"])
-        data["time"] = time
+        data["time"] = d_time(data)
         try:
             data["user"] = user(int(data["user"]))
         except ValueError:
@@ -171,7 +171,7 @@ def trade() -> list:
         for j in strange(4):
             i.pop(j)
         i = all_int(i, ["price", "buy", "sell"])
-        i["time"] = time(i)
+        i["time"] = d_time(i)
         out += [i]
     return out
 
@@ -192,7 +192,7 @@ def server() -> list:
         for j in strange(8):
             i.pop(j)
         i = all_int(i, ["id", "count", "owner"])
-        i["time"] = time(i)
+        i["time"] = d_time(i)
         out += [(i, guild(i["id"]))]
     return out
 
@@ -204,7 +204,7 @@ def status() -> list:
         for j in strange(8):
             i.pop(j)
         i = all_int(i, ["ping", "user", "guild", "message", "command", "ram"])
-        i["time"] = time(i)
+        i["time"] = d_time(i)
         i["cpu"] = float(i["cpu"])
         out += [i]
     return out
