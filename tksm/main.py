@@ -156,6 +156,13 @@ class gift:
 
 
 def count() -> dict:
+    """countを取得
+
+    Returns
+    -------
+    dict
+        count
+    """
     req = requests.get(f"{endpoint}/count.php")
     data = load(req)[0]
     for i in strange(7):
@@ -164,6 +171,13 @@ def count() -> dict:
     return data
 
 def trade() -> list:
+    """tradeを取得
+
+    Returns
+    -------
+    list
+        trade
+    """
     req = requests.get(f"{endpoint}/trade.php")
     data = load(req)
     out =  []
@@ -176,6 +190,18 @@ def trade() -> list:
     return out
 
 def trade_get(time: datetime) -> dict | None:
+    """その時間のtradeを取得
+
+    Parameters
+    ----------
+    time : datetime
+        取得したい時間
+
+    Returns
+    -------
+    dict | None
+        その時間のtrade
+    """
     data = trade()
     for i in range(len(data)):
         if i == len(data) - 1:
@@ -185,6 +211,13 @@ def trade_get(time: datetime) -> dict | None:
     return None
 
 def server() -> list:
+    """serverを取得
+
+    Returns
+    -------
+    list
+        server
+    """
     req = requests.get(f"{endpoint}/server.php")
     data = load(req)
     out = []
@@ -197,6 +230,13 @@ def server() -> list:
     return out
 
 def status() -> list:
+    """statusを取得
+
+    Returns
+    -------
+    list
+        status
+    """
     req = requests.get(f"{endpoint}/status.php")
     data = load(req)
     out = []
