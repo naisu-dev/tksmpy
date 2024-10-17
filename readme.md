@@ -18,9 +18,9 @@ docstringはnumpyを使用
   - .data | データ
 
 ### 関数
-- count
-- trade
-- server
-- status 
+- count()
+- trade()
+- server()
+- status()  
 はそれぞれapiそのまま
 - trade_get(time) | その時間のtradeを調べる  なかったらNoneを返す
