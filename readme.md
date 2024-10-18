@@ -1,4 +1,4 @@
-# takasumiAPI pythonラッパー
+# <a href="https://github.com/Taka005/TakasumiBOT_API">TakasumiBOT API</a> pythonラッパー
 docstringはnumpyを使用  
 上の方の関数は気にしないでね
 
