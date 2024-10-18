@@ -2,6 +2,12 @@
 docstringはnumpyを使用  
 上の方の関数は気にしないでね
 
+## インストール
+```bash
+pip install git+https://github.com/naisu-dev/tksmpy.git
+```
+
+## 中身
 ### クラス
 - user ユーザー
   - .id | ID
@@ -24,3 +30,12 @@ docstringはnumpyを使用
 - status()  
 はそれぞれapiそのまま
 - trade_get(time) | その時間のtradeを調べる  なかったらNoneを返す
+
+## 使用例
+#### user
+```python
+import tksm
+
+naisu = tksm.user(874430259599142922)
+print(naisu.user)
+```
